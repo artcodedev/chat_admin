@@ -1,33 +1,32 @@
 
 
-// import React from 'react';
+'use client'
 
 
-// interface Pro {
-//     checked: boolean
-//     onChange: 
+import React, { useState } from "react";
+
+import style from "@/app/style/Components/Switcher.module.scss"
 
 
+// import "@/app/style/Components/Switcher.css"
 
-// const Switch = () => {
-//   return (
-//     <>
-//       <input
-//         checked={isOn}
-//         onChange={handleToggle}
-//         className="react-switch-checkbox"
-//         id={`react-switch-new`}
-//         type="checkbox"
-//       />
-//       <label
-//         style={{ background: isOn && onColor }}
-//         className="react-switch-label"
-//         htmlFor={`react-switch-new`}
-//       >
-//         <span className={`react-switch-button`} />
-//       </label>
-//     </>
-//   );
-// };
+function ToggleSwitch() {
 
-// export default Switch;
+  const [isToggled, setIsToggled] = useState(false);
+  const onToggle = () => setIsToggled(!isToggled);
+
+  return (
+
+    <label className={style['Switcher']}>
+        <input type="checkbox" checked={isToggled} onChange={onToggle} />
+
+        <span className={style['Switcher__switch']} />
+    </label>
+
+    // <label className="toggle-switch">
+    //   <input type="checkbox" checked={isToggled} onChange={onToggle} />
+    //   <span className="switch" />
+    // </label>
+  );
+}
+export default ToggleSwitch;

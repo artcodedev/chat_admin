@@ -3,8 +3,9 @@
 import style from "@/app/style/Admin/Admin.module.scss"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Form from 'react-bootstrap/Form';
+// import Form from 'react-bootstrap/Form';
 import AdminPanelLeft from '@/app/Components/Admin/AdminPanelLeft'
+import AdminPanelRight from "@/app/Components/Admin/AdminPanelRight"
 
 
 const Admin = () => {
@@ -19,6 +20,8 @@ const Admin = () => {
                         <div className={style['Admin__panel']}>
 
                             <AdminPanelLeft />
+
+                            <AdminPanelRight />
 
                         </div>
 
