@@ -18,15 +18,19 @@ const checkToken = () => {
 
     try {
 
-        const cookieStore = cookies()
-        const token = cookieStore.get('token')?.value
+        const token = cookies().get('token')?.value
 
-        if (token) {
+        return token && (jwt.verify(token, Token()) as TokenInterface).id_user ? true : false
 
-            const token_decode = jwt.verify(token, Token());
+        // const cookieStore = cookies()
+        // const token = cookieStore.get('token')?.value
 
-            if ((token_decode as TokenInterface).id_user) { return true }
-        }
+        // if (token) {
+
+        //     const token_decode = jwt.verify(token, Token());
+
+        //     if ((token_decode as TokenInterface).id_user) { return true }
+        // }
 
     } catch (e) {
         return false
