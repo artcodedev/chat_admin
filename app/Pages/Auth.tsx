@@ -32,7 +32,6 @@ export default function Auth() {
     const [login, setLogin] = React.useState<string>("");
     const [password, setPassword] = React.useState<string>("");
     const [cookies, setCookie] = useCookies(['token']);
-    
 
     useEffect(() => {
         if(reload) router.replace("/admin")
@@ -42,8 +41,8 @@ export default function Auth() {
 
     const sendData = () => {
 
-        if (login.length < 3) setIsValideLogin(true)
-        if (password.length < 3) setIsValidePass(true)
+        if (login.length < 6) {setIsValideLogin(true)}
+        if (password.length < 6) {setIsValidePass(true)}
 
         if (login.length > 5 && password.length > 5) {
 
@@ -65,14 +64,11 @@ export default function Auth() {
             .then( (response) => response.json())
             .then(r => {
 
-                console.log(r)
-
                 if (r.status) {
                     setCookie("token", r.token)
                     setReload(true);
                 }
                 else {
-                    
                     setIsValidePass(true);
                     setIsValideLogin(true);
                     setCheckPass(false)
@@ -87,25 +83,27 @@ export default function Auth() {
 
 
         }
-        // setTimeout(() => {setDanger(false)}, 3000);
-        // setCheckPass(checkPass == false ? true : false)
     }
 
     const loginFocus = () => { setIsValideLogin(false) }
     const passFocus = () => { setIsValidePass(false) }
 
-
-    const loginChange = (e: any) => {
-        setLogin(e.target.value)
+    const keyPres = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter') {sendData()}
     }
 
-    const passChange = (e: any) => {
-        setPassword(e.target.value)
+    const loginChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setLogin(e.currentTarget.value)
     }
+
+    const passChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setPassword(e.currentTarget.value)
+    }
+
+    const buttonOkSend = () => {sendData()}
 
 
     return (
-
 
         <div className={style['Auth']}>
 
@@ -127,6 +125,8 @@ export default function Auth() {
                             className={style["Auth__pole__input"]}
                             onChange={loginChange}
                             onFocus={loginFocus}
+                            onKeyUpCapture={keyPres}
+                            // onKeyPressCapture={keyPres}
                             isInvalid={isValideLogin} />
 
                     </div>
@@ -140,6 +140,8 @@ export default function Auth() {
                                 disabled={checkPass}
                                 onChange={passChange}
                                 onFocus={passFocus}
+                                onKeyUpCapture={keyPres}
+                                // onKeyPressCapture={keyPres}
                                 isInvalid={isValidePass} />
                             <Button variant="outline-secondary" onClick={show_pass}>
                                 {showPass ? <i className="bi bi-eye"></i> : <i className="bi bi-eye-slash"></i>}
@@ -149,7 +151,7 @@ export default function Auth() {
 
                     <div className={style['Auth__pole']}>
                         <div className="d-grid gap-2">
-                            <Button variant="primary" className="Auth__pole__button" disabled={checkPass} onClick={sendData}>
+                            <Button variant="primary" className="Auth__pole__button" disabled={checkPass} onClick={buttonOkSend}>
                                 {checkPass ? <Spinner animation="grow" /> : "Войти"}
                             </Button>
                         </div>

@@ -2,7 +2,7 @@
 
 import { redirect } from 'next/navigation'
 import checkToken from "@/app/utils/checkToken"
-import Auth from "@/app/Components/Auth"
+import Auth from "@/app/Pages/Auth"
 
 export default function Index() {
 
@@ -10,9 +10,6 @@ export default function Index() {
 
   if (check_token) redirect("/admin");
 
-  return (
-    <>
-      <Auth />
-    </>);
+  return (<> <Auth /> </>);
 
 }

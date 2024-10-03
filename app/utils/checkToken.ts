@@ -1,38 +1,39 @@
 
 import { cookies } from 'next/headers'
 import jwt from 'jsonwebtoken';
-import privatKey from "@/app/utils/Token"
+import Token from "@/app/utils/Token"
+
+
+
+interface TokenInterface {
+    login: String
+    pass: String
+    id_user: String
+    iat?: Number
+    exp?: Number
+}
+
 
 const checkToken = () => {
-    const cookieStore = cookies()
-    const token = cookieStore.get('token')?.value
 
+    try {
 
-    if (token) {
-        let decode = jwt.decode(token)
+        const cookieStore = cookies()
+        const token = cookieStore.get('token')?.value
 
-        let varify = jwt.verify(token, "32424crecj@#$%^&*())%nUGBsam?>0097^(*)&()982340", (err, decoded) => {
-    
-            console.log(decoded) // John
-        });
+        if (token) {
 
-        console.log("=====================================================")
-        // console.log(varify)
-        console.log(decode)
-        console.log("=====================================================")
+            const token_decode = jwt.verify(token, Token());
 
-        // if (varify === privatKey)
+            if ((token_decode as TokenInterface).id_user) { return true }
+        }
 
-
-
-        // console.log("=====================================================")
-        // console.log(token_v) eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6IjExMTExMSIsInBhc3MiOiIyMjIyMjIiLCJpZF91c2VyIjoiMTIzNDU2IiwiaWF0IjoxNzI3ODY2ODk5fQ.5_A0i0Zpz9KVWgHyW609gPdiztpM8tnRF5oj-GK4JUA
-        // console.log("=====================================================")
-
-        return true
+    } catch (e) {
+        return false
     }
 
-    return false;
+    return false
+
 }
 
 export default checkToken;

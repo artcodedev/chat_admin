@@ -1,7 +1,7 @@
 
 
 import jwt from 'jsonwebtoken';
-import privatKey from "@/app/utils/Token"
+import Token from "@/app/utils/Token"
 
 type Data = {
     login: String
@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
 
     let login: String = res?.login;
     let password: String = res?.password;
-    let private_key: String = privatKey();
+    let private_key: String = Token().toString();
 
     // // Connect to db
     if (login == "111111" && password == "222222") {
@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
             pass: password,
             id_user: "123456"
 
-        }, privatKey(), {
+        }, private_key.toString(), {
             expiresIn: '1h'
         });
 
