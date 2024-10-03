@@ -16,27 +16,16 @@ interface TokenInterface {
 
 const checkToken = () => {
 
+
     try {
 
         const token = cookies().get('token')?.value
 
-        return token && (jwt.verify(token, Token()) as TokenInterface).id_user ? true : false
-
-        // const cookieStore = cookies()
-        // const token = cookieStore.get('token')?.value
-
-        // if (token) {
-
-        //     const token_decode = jwt.verify(token, Token());
-
-        //     if ((token_decode as TokenInterface).id_user) { return true }
-        // }
+        return token && (jwt.verify(token, Token()) as TokenInterface)?.id_user ? true : false
 
     } catch (e) {
         return false
     }
-
-    return false
 
 }
 
