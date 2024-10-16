@@ -15,26 +15,27 @@ import Button from 'react-bootstrap/Button';
 import Spinner from 'react-bootstrap/Spinner';
 import Alert from 'react-bootstrap/Alert';
 import React from 'react';
+import Console from "@/app/utils/Console";
 
 import { useCookies } from 'react-cookie';
 
 
 export default function Auth() {
 
-    const router = useRouter()
+    const router = useRouter();
 
     const [showPass, setShowPass] = React.useState<boolean>(true);
-    const [checkPass, setCheckPass] = React.useState<boolean>(false)
-    const [isValidePass, setIsValidePass] = React.useState<boolean>(false)
-    const [isValideLogin, setIsValideLogin] = React.useState<boolean>(false)
-    const [reload, setReload] = React.useState<boolean>(false)
+    const [checkPass, setCheckPass] = React.useState<boolean>(false);
+    const [isValidePass, setIsValidePass] = React.useState<boolean>(false);
+    const [isValideLogin, setIsValideLogin] = React.useState<boolean>(false);
+    const [reload, setReload] = React.useState<boolean>(false);
     const [danger, setDanger] = React.useState<boolean>(false);
     const [login, setLogin] = React.useState<string>("");
     const [password, setPassword] = React.useState<string>("");
     const [cookies, setCookie] = useCookies(['token']);
 
     useEffect(() => {
-        if(reload) router.replace("/admin")
+        if(reload) router.replace("/admin");
     })
 
     const show_pass = () => setShowPass(showPass ? false : true);
@@ -85,22 +86,22 @@ export default function Auth() {
         }
     }
 
-    const loginFocus = () => { setIsValideLogin(false) }
-    const passFocus = () => { setIsValidePass(false) }
+    const loginFocus = () => { setIsValideLogin(false); }
+    const passFocus = () => { setIsValidePass(false); }
 
     const keyPres = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter') {sendData()}
     }
 
     const loginChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setLogin(e.currentTarget.value)
+        setLogin(e.currentTarget.value);
     }
 
     const passChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setPassword(e.currentTarget.value)
+        setPassword(e.currentTarget.value);
     }
 
-    const buttonOkSend = () => {sendData()}
+    const buttonOkSend = () => {sendData();}
 
 
     return (
@@ -126,7 +127,6 @@ export default function Auth() {
                             onChange={loginChange}
                             onFocus={loginFocus}
                             onKeyUpCapture={keyPres}
-                            // onKeyPressCapture={keyPres}
                             isInvalid={isValideLogin} />
 
                     </div>
@@ -141,7 +141,6 @@ export default function Auth() {
                                 onChange={passChange}
                                 onFocus={passFocus}
                                 onKeyUpCapture={keyPres}
-                                // onKeyPressCapture={keyPres}
                                 isInvalid={isValidePass} />
                             <Button variant="outline-secondary" onClick={show_pass}>
                                 {showPass ? <i className="bi bi-eye"></i> : <i className="bi bi-eye-slash"></i>}

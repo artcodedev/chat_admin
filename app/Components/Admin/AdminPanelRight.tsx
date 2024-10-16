@@ -10,7 +10,6 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
 import React from 'react';
 
-import MessagesPanel from "@/app/Components/Admin/MessagesPanel"
 
 const AdminPanelRight = () => {
 
@@ -24,9 +23,9 @@ const AdminPanelRight = () => {
         {
             id_message: "850",
             id_user: 121212121,
-            message: "hello some text",
+            message: "hello some textsdasdasdasdsa",
             new_message: true,
-            count_new_message: 10
+            count_new_message: 10121
         },
         {
             id_message: "851",
@@ -62,7 +61,7 @@ const AdminPanelRight = () => {
 
                         <InputGroup>
 
-                            <Form.Control onChange={searchChange} />
+                            <Form.Control onChange={searchChange} placeholder="Поиск..."/>
 
                             <Button onClick={serach_but}>
                                 <i className="bi bi-search"></i>
@@ -81,40 +80,10 @@ const AdminPanelRight = () => {
                                 <div className={style['AdminPanelRight__wrapper__messages__uid']}>ID {e.id_user}</div>
                                 <div className={style['AdminPanelRight__wrapper__messages__message']}>{e.message}</div>
                                 {e.new_message ? <div className={style['AdminPanelRight__wrapper__messages__newMess']}>{e.count_new_message}</div> : ""}
-                                
+
                             </div>
 
                         </div>)}
-
-                        {/* <div className={style['AdminPanelRight__wrapper__messages']}>
-
-                            <div className={style['AdminPanelRight__wrapper__messages__cont']}>
-                                <div className={style['AdminPanelRight__wrapper__messages__uid']}>ID 12121212</div>
-                                <div className={style['AdminPanelRight__wrapper__messages__message']}>Some text message text messagetext message</div>
-                                <div className={style['AdminPanelRight__wrapper__messages__newMess']}>1</div>
-                            </div>
-
-                        </div>
-
-                        <div className={style['AdminPanelRight__wrapper__messages']}>
-
-                            <div className={style['AdminPanelRight__wrapper__messages__cont']}>
-                                <div className={style['AdminPanelRight__wrapper__messages__uid']}>ID 12121212</div>
-                                <div className={style['AdminPanelRight__wrapper__messages__message']}>Some text message text messagetext message</div>
-                                <div className={style['AdminPanelRight__wrapper__messages__newMess']}>1</div>
-                            </div>
-
-                        </div>
-
-                        <div className={style['AdminPanelRight__wrapper__messages']}>
-
-                            <div className={style['AdminPanelRight__wrapper__messages__cont']}>
-                                <div className={style['AdminPanelRight__wrapper__messages__uid']}>ID 12121212</div>
-                                <div className={style['AdminPanelRight__wrapper__messages__message']}>Some text message text messagetext message</div>
-                                <div className={style['AdminPanelRight__wrapper__messages__newMess']}>1</div>
-                            </div>
-
-                        </div> */}
 
                     </div>
 

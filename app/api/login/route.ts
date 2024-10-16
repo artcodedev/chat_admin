@@ -4,8 +4,8 @@ import jwt from 'jsonwebtoken';
 import Token from "@/app/utils/Token"
 
 type Data = {
-    login: String
-    password: String
+    login: string
+    password: string
 }
 
 import { type NextRequest, NextResponse } from 'next/server'
@@ -14,14 +14,14 @@ export async function POST(request: NextRequest) {
 
     const res: Data = await request.json();
 
-    let login: String = res?.login;
-    let password: String = res?.password;
-    let private_key: String = Token().toString();
+    const login: string = res?.login;
+    const password: string = res?.password;
+    const private_key: string = Token().toString();
 
     // // Connect to db
     if (login == "111111" && password == "222222") {
 
-        let token: String = jwt.sign({
+        const token: string = jwt.sign({
             login: login,
             pass: password,
             id_user: "123456"

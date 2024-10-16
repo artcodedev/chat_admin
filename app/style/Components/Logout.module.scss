@@ -1,0 +1,51 @@
+
+
+
+.Logout {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: rgba(0,0,0,.5);
+    z-index: 10;
+
+    &__button {
+        width: 100px;
+    }
+
+    &__wrapp {
+        position: relative;
+        width: 100%; height: 100%;
+    }
+
+    &__flex_p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__modal {
+        width: 330px;
+        height: auto;
+        padding: 30px;
+        border-radius: 10px;
+        background: #fff;
+        box-shadow:  0 0 10px #ffffff4a;
+    }
+    
+    &__title {
+        text-align: center;
+        &__txt {
+            font-size: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color:black
+        }
+    }
+    
+    &__but {
+        display: flex;
+        margin-top: 30px;
+        justify-content: space-around;
+    } 
+}

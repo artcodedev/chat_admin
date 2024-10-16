@@ -4,6 +4,10 @@
   background: rgb(38, 77, 82);
   min-height: 100%;
 
+  &__active {
+    background: rgb(47, 137, 148);
+  }
+
   &__wrapper {
     position: relative;
     width: 100%;
