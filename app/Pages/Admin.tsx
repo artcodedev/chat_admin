@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import AdminPanelLeft from '@/app/Components/Admin/AdminPanelLeft'
 import AdminPanelRight from "@/app/Components/Admin/AdminPanelRight"
+import Admin_header from "@/app/Components/Admin/Admin_header";
 import Message from '@/app/Components/Admin/Message'
 import Logout from "@/app/Components/Logout";
 import Payment from "@/app/Components/Admin/Payment";
@@ -43,17 +44,19 @@ const Admin = () => {
                                 
                                 <div className={style['Admin__content__cont']}>
 
+                                    <Admin_header />
 
 
-                                    <div className={style['Admin__header']}>
+
+                                    {/* <div className={style['Admin__header']}>
 
                                         <div className={style['Admin__header__wrap']}>
 
-                                            <div className={style['Admin__header__i']}>ssd</div>
+                                            <div className={style['Admin__header__i']}>sssdd</div>
 
                                         </div>
 
-                                    </div>
+                                    </div> */}
 
 
 
@@ -77,107 +80,7 @@ const Admin = () => {
                                     <Footer_admin />
 
 
-
-
-                                    {/* <div className={style['Admin__footer']}>
-
-                                        <div className={style['Admin__header__wrap']}>
-
-                                            <div className={style['Admin_input']}>
-                                                <input type="text" placeholder="Введите сообщение..." className={style['Admin_input_input']} />
-                                            </div>
-
-                                            <div className={style['Admin_icon_input']}>
-
-                                                <div className={style['Admin_icon_ic']}>
-                                                    <i className="bi bi-paperclip"></i>
-                                                </div>
-
-                                                <div className={style['Admin_icon_ic']}>
-                                                    <i className="bi bi-emoji-smile-fill"></i>
-                                                </div>
-                                                <div className={style['Admin_icon_ic']}>
-                                                    <i className="bi bi-send-fill"></i>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div> */}
-
-
-
-
-
                                 </div>}
-
-
-
-                                {/* <div className={style['Admin__content__cont']}>
-
-
-
-                                    <div className={style['Admin__header']}>
-
-                                        <div className={style['Admin__header__wrap']}>
-
-                                            <div className={style['Admin__header__i']}>ssd</div>
-
-                                        </div>
-
-                                    </div>
-
-
-
-
-                                    <div className={style['Admin__message']}>
-
-                                        <div className={style['Admin__message__wrapp']}>
-                                            <div className={style['Admin_all_message']}>
-
-                                                <Message time="1.12.12.12" type_user="admin" message="hellol" />
-
-                                                <Message time="1.12.12.12" type_user="admin" message="hellol" />
-
-                                                <Message time="1.12.12.12" type_user="user" message="hellol" />
-
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-
-
-
-                                    <div className={style['Admin__footer']}>
-
-                                        <div className={style['Admin__header__wrap']}>
-
-                                            <div className={style['Admin_input']}>
-                                                <input type="text" placeholder="Введите сообщение..." className={style['Admin_input_input']} />
-                                            </div>
-
-                                            <div className={style['Admin_icon_input']}>
-
-                                                <div className={style['Admin_icon_ic']}>
-                                                    <i className="bi bi-paperclip"></i>
-                                                </div>
-
-                                                <div className={style['Admin_icon_ic']}>
-                                                    <i className="bi bi-emoji-smile-fill"></i>
-                                                </div>
-                                                <div className={style['Admin_icon_ic']}>
-                                                    <i className="bi bi-send-fill"></i>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-
-
-
-
-                                </div> */}
 
                             </div>
                         </div>
