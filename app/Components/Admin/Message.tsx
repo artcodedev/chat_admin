@@ -31,7 +31,6 @@ const Message = ({ ...pr }: Props) => {
                             <div className={style['Message__message_time']}>{pr.time}</div>
                         </div>
 
-
                         <div className={style['Message__message_mes']}>{pr.message}</div>
                     </div>
                 </div>

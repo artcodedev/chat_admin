@@ -9,6 +9,7 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
 import React from 'react';
+import { PanelMessage } from "./PanelMessage";
 
 
 const AdminPanelRight = () => {
@@ -22,24 +23,24 @@ const AdminPanelRight = () => {
     const test_message = [
         {
             id_message: "850",
-            id_user: 121212121,
+            id_user: "121212121",
             message: "hello some textsdasdasdasdsa",
             new_message: true,
-            count_new_message: 10121
+            count_new_message: "10121"
         },
         {
             id_message: "851",
-            id_user: 121212121,
+            id_user: "121212121",
             message: "hello some text",
             new_message: true,
-            count_new_message: 10
+            count_new_message: "10"
         },
         {
             id_message: "852",
-            id_user: 121212121,
+            id_user: "121212121",
             message: "hello some text",
             new_message: true,
-            count_new_message: 10
+            count_new_message: "10"
         }
     ]
 
@@ -73,17 +74,7 @@ const AdminPanelRight = () => {
 
                     <div className="">
 
-                        {test_message.map((e) => <div className={style['AdminPanelRight__wrapper__messages']}>
-
-                            <div className={style['AdminPanelRight__wrapper__messages__cont']} id-message={e.id_message} onClick={getAllMessage}>
-
-                                <div className={style['AdminPanelRight__wrapper__messages__uid']}>ID {e.id_user}</div>
-                                <div className={style['AdminPanelRight__wrapper__messages__message']}>{e.message}</div>
-                                {e.new_message ? <div className={style['AdminPanelRight__wrapper__messages__newMess']}>{e.count_new_message}</div> : ""}
-
-                            </div>
-
-                        </div>)}
+                        {test_message.map((e) => <PanelMessage id_message={e.id_message} id_user={e.id_user} message={e.message} new_message={e.new_message} count_new_message={e.count_new_message}/>)}
 
                     </div>
 

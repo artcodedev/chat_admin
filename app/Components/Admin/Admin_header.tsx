@@ -1,39 +1,73 @@
 
+'use client'
 
+import React from "react"
+import { useStore, useHideMessage } from "@/app/Store/store";
+
+import Console from "@/app/utils/Console";
 
 import style from '@/app/style/Components/AdminHeader.module.scss'
 
 
-const Admin_header = () => {
+const Admin_header: React.FC = () => {
+
+    const [activeIcon, setActiveIcon] = React.useState<boolean>(false);
+    const [butClose, setButClose] = React.useState<boolean>(false);
+    const { setHideMessage} = useHideMessage()
+
+    const close_message_cont = () => {
+        Console.log("[+] Hidden menu");
+        setHideMessage(false)
+    }
+
+    const open_menu = () => {
+
+        Console.log("[+] Open menu header message");
+        setActiveIcon(true);
+       
+        
+        // setActiveIcon("block"); 
+
+        // const width = window.innerWidth;
+
+        // if (width < 560) {
+        //     // setButClose
+        // }
+
+
+    }
+    const hidden_menu = () => {}
+
     return (
         <>
-
-            {/* <div className={style['AdminHeader']}> */}
             <div className={style['AdminHeader']}>
 
                 <div className={style['AdminHeader__wrap']}>
 
                     <div className={style['AdminHeader__i']}>
 
-                        <div className={style['AdminHeader__i_item']}>
-                            <div className={style['AdminHeader__i_ic_menu']}>
+
+                        <div className={style['AdminHeader__i_item']} >
+
+                            <div className={style['AdminHeader__i_ic_menu']} onClick={close_message_cont}>
 
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-arrow-left" viewBox="0 0 16 16" data-darkreader-inline-fill="">
                                     <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"></path>
                                 </svg>
                             </div>
+
                             <div className={style['AdminHeader__i_uid_ip']}>122.222.222.22</div>
                         </div>
 
                         <div className={style['AdminHeader__i_item']}>
 
-                            <div className={style['AdminHeader__i_ic_menu']}>
+                            <div className={style['AdminHeader__i_ic_menu']} onClick={open_menu}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-three-dots-vertical" viewBox="0 0 16 16" data-darkreader-inline-fill="">
                                     <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"></path>
                                 </svg>
                             </div>
 
-                            <div className={style['AdminHeader__i_ic_menu']}>
+                            <div className={`${style['AdminHeader__i_ic_menu']} ${activeIcon ? style['AdminHeader__i__show'] : ''}`}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-person-fill" viewBox="0 0 16 16" data-darkreader-inline-fill="">
                                     <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"></path>
                                 </svg>
@@ -65,9 +99,7 @@ const Admin_header = () => {
                                 </svg>
                             </div>
 
-
                         </div>
-
 
                     </div>
 

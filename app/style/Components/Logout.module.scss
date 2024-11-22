@@ -26,7 +26,8 @@
     }
 
     &__modal {
-        width: 330px;
+        max-width: 330px;
+        width: 90%;
         height: auto;
         padding: 30px;
         border-radius: 10px;

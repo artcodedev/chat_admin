@@ -46,6 +46,7 @@
 
         &_item:nth-child(1) &_ic_menu:nth-child(1) {
             display: none;
+
         }
 
         &_item:nth-child(2) &_ic_menu:nth-child(1) {
@@ -65,12 +66,13 @@
         }
 
         &_ic_menu:hover>svg {
-            fill: rgb(255, 255, 255);
+            fill: #ffffff;
         }
     }
 }
 
-@media screen and (max-width: 650px) {
+
+@media screen and (max-width: 875px) {
     .AdminHeader {
 
         &__i {
@@ -82,30 +84,74 @@
             }
             &_item:nth-child(1) &_ic_menu:nth-child(1) {
                 display: block;
+                margin-left: 0px;
             }
+
+            &__show {
+                display: block;
+            }
+
+            &_ic_menu:hover {
+                background: #e8e8e8;
+            }
+
+            &_ic_menu:hover>svg {
+                fill: rgb(38, 77, 82);
+            }
+
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 650px) {
+    .AdminHeader {
+
+        &__i {
+
+            &__show {
+                display: block;
+            }
+
+            &_uid_ip {
+                font-family: Verdana;
+                font-weight: bold;
+                margin-left: 10px;
+            }
+
+            &_item:nth-child(1) &_ic_menu:nth-child(1) {
+                display: block;
+                margin-left: 0px;
+            }
+
             &_item:nth-child(2) &_ic_menu:nth-child(2) {
                 display: none;
             }
+
             &_item:nth-child(2) &_ic_menu:nth-child(3) {
                 display: none;
             }
+
             &_item:nth-child(2) &_ic_menu:nth-child(4) {
                 display: none;
             }
+
             &_item:nth-child(2) &_ic_menu:nth-child(5) {
                 display: none;
             }
+
             &_item:nth-child(2) &_ic_menu:nth-child(6) {
                 display: none;
             }
 
             &_item:nth-child(2) &_ic_menu:nth-child(1) {
-                display: block;
+                display: Block;
             }
 
-            // &_item:nth-child(2) &_ic_menu:nth-child(6) {
-            //     display: block;
-            // }
+            &_item:nth-child(2) &_ic_menu:nth-child(6) {
+                display: None;
+            }
         }
 
 

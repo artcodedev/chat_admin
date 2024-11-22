@@ -1,0 +1,66 @@
+.PanelMessage {
+
+    width: 100%;
+    height: 100%;
+    background: #fff;
+
+    &__wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border-right: 1px solid #d9d9d9;
+
+        &__messages {
+            padding: 10px 10px;
+            position: relative;
+            width: 100%;
+            border-bottom: 1px solid rgba(38, 77, 82, 0.24);
+
+            &__uid {
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            &__message {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                width: 70%;
+            }
+
+            &__newMess {
+                position: absolute;
+                background: rgba(38, 77, 82);
+                color: #fff;
+                right: 10px;
+                top: 20px;
+                padding: 8px;
+                border-radius: 10px;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        &__messages:hover {
+            background: rgb(59, 198, 216);
+            cursor: pointer;
+        }
+
+    }
+
+}
+
+
+@media screen and (max-width: 875px) {
+
+    .PanelMessage {
+        &__wrapper {
+            &__messages:hover {
+                background: rgba(59, 198, 216, 0);
+                cursor: pointer;
+            }
+        }
+    }
+}

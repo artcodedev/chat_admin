@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Alert from 'react-bootstrap/Alert';
 import React from 'react';
-import useStore from "@/app/utils/store";
+import { useStore } from "@/app/Store/store";
 
 const Payment = () => {
 

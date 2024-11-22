@@ -8,7 +8,7 @@ import Image from 'next/image'
 import ToggleSwitch from "@/app/Components/Admin/Switch"
 import Console from "@/app/utils/Console"
 
-import useStore from '@/app/utils/store';
+import {useStore} from '@/app/Store/store';
 
 import React from 'react';
 

@@ -27,7 +27,7 @@ export async function POST(request: NextRequest) {
             id_user: "123456"
 
         }, private_key.toString(), {
-            expiresIn: '1h'
+            expiresIn: '10h'
         });
 
         return NextResponse.json({ status: true, token: token })

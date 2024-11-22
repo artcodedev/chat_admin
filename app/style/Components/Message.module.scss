@@ -1,3 +1,8 @@
+
+$br: 10px 10px 10px 0px;
+$br_r: 10px 10px 0px 10px;
+$jc: space-between;
+
 .Message {
   &_some {
     background: red;
@@ -9,19 +14,19 @@
     &_wrapp__utr {
       padding: 10px;
       max-width: 60%;
-      max-width: 600px;
-      // min-width: 450px;
+      max-width: 500px;
+      min-width: 150px;
       background: #e8e8e8;
       background-image: initial;
     }
 
     &_wrapp__user {
-      border-radius: 10px 10px 10px 0px;
+      border-radius: $br;
       background-color: rgb(219, 219, 219);
     }
 
     &_wrapp__admin {
-      border-radius: 10px 10px 0px 10px;
+      border-radius: $br_r;
       background-color: rgb(2, 210, 235);
     }
 
@@ -39,7 +44,7 @@
   }
   &__message_info {
     display: flex;
-    justify-content: space-between;
+    justify-content: $jc;
   }
 
   &__message_title {
@@ -53,7 +58,7 @@
 
   &__message_info {
     display: flex;
-    justify-content: space-between;
+    justify-content: $jc;
     align-items: center;
   }
 
@@ -70,18 +75,17 @@
         padding: 10px;
         max-width: 60%;
         max-width: 100%;
-        // min-width: 450px;
         background: #e8e8e8;
         background-image: initial;
       }
 
       &_wrapp__user {
-        border-radius: 10px 10px 10px 0px;
+        border-radius: $br;
         background-color: rgb(219, 219, 219);
       }
   
       &_wrapp__admin {
-        border-radius: 10px 10px 0px 10px;
+        border-radius: $br_r;
         background-color: rgb(2, 210, 235);
       }
     }

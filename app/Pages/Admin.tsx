@@ -1,8 +1,8 @@
 
 'use client'
-import style from "@/app/style/Admin/Admin.module.scss"
-// import 'bootstrap/dist/css/bootstrap.min.css';
 
+
+import style from "@/app/style/Admin/Admin.module.scss"
 import '@/app/style/bootstrap.min.css'
 
 import AdminPanelLeft from '@/app/Components/Admin/AdminPanelLeft'
@@ -12,13 +12,15 @@ import Message from '@/app/Components/Admin/Message'
 import Logout from "@/app/Components/Logout";
 import Payment from "@/app/Components/Admin/Payment";
 import Loading from "@/app/Components/Loading"
-import useStore from "@/app/utils/store";
+import {useStore, useHideMessage } from "@/app/Store/store";
 import Footer_admin from "@/app/Components/Admin/Admin_footer"
+
 
 
 const Admin = () => {
     
     const { logout, payment, loading } = useStore()
+    const { hide } = useHideMessage()
 
     return (
         <>
@@ -39,10 +41,12 @@ const Admin = () => {
 
                         </div>
 
-                        <div className={style['Admin__content']}>
+                        <div className={`${style['Admin__content']} ${hide ? style['Admin__notactive'] : ''}`}>
+
+
                             <div className={style['Admin__content__wrapper']}>
 
-                                {loading ? <Loading /> :
+                                {loading ? <Loading /> :    
 
                                     <div className={style['Admin__content__cont']}>
 
@@ -65,13 +69,24 @@ const Admin = () => {
 
                                                     <Message time="1.12.12.12" type_user="user" message="hellol" />
 
+                                                    <Message time="1.12.12.12" type_user="admin" message="hellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfsl" />
+
+                                                    <Message time="1.12.12.12" type_user="admin" message="hellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfsl" />
+
+                                                    <Message time="1.12.12.12" type_user="admin" message="hellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfsl" />
+
+                                                    <Message time="1.12.12.12" type_user="admin" message="hellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfsl" />
+
+                                                    <Message time="1.12.12.12" type_user="admin" message="hellol" />
+
+                                                    <Message time="1.12.12.12" type_user="user" message="hellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfsl" />
+
                                                 </div>
                                             </div>
 
                                         </div>
 
                                         <Footer_admin />
-
 
                                     </div>}
 

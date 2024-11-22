@@ -16,7 +16,7 @@ interface Store {
 
 }
 
-const useStore = create<Store>((set) => ({
+export const useStore = create<Store>((set) => ({
 
   logout: false,
   setLogout: (s) => set(() => ({ logout: s })),
@@ -30,7 +30,12 @@ const useStore = create<Store>((set) => ({
 }))
 
 
+interface HideMessage {
+  hide: boolean
+  setHideMessage: (s: boolean) => void,
+}
 
-
-
-export default useStore;
+export const useHideMessage = create<HideMessage>((set) => ({
+  hide: false,
+  setHideMessage: (s) => set(() => ({ hide: s }))
+}));

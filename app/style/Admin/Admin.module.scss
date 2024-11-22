@@ -1,3 +1,7 @@
+
+$anim: all 500ms ease;
+
+
 .Admin {
   position: absolute;
   min-width: 310px;
@@ -41,10 +45,6 @@
 
   &__cont {
     background: rgb(255, 255, 255);
-
-    // position: absolute;
-    // top: 0; bottom: 0; right: 0; left: 0;
-    // box-shadow: 0 0 10px #00000091;
     position: absolute;
     bottom: 0; top: 0;
     width: 100%;
@@ -53,7 +53,6 @@
     margin: auto;
     min-height: 100%;
     display: flex;
-    // max-width: 1400px;
     box-shadow: 0 0 10px #00000091;
   }
 
@@ -90,21 +89,30 @@
       // background-image: url("../../../public/background.svg");
     }
   }
+
+  &__notactive {
+    transition: $anim;
+  }
 }
 
-@media screen and (max-width: 975px) {
+@media screen and (max-width: 875px) {
   .Admin {
     &__content {
       position: fixed;
       width: 100%;
       height: 100%;
       z-index: 3;
+      right: -110%;
+      transition: $anim;
     }
-    &__hidden_menu {
-      right: -1000%;
-    }
-    &_open {
+    &__notactive {
       right: 0%;
+      transition: $anim;
+      
+    }
+
+    &_open {
+      // right: 0%;
     }
     &__panel {
       min-width: 100%;
@@ -123,7 +131,7 @@
       z-index: 3;
     }
     &__hidden_menu {
-      right: -1000%;
+      right: -110%;
     }
     &_open {
       right: 0%;
@@ -136,7 +144,6 @@
       padding: 10px;
       max-width: 60%;
       max-width: 100%;
-      // min-width: 450px;
     }
   }
 }

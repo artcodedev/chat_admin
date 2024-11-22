@@ -7,7 +7,7 @@ import Console from "@/app/utils/Console";
 import React from 'react';
 import { useRouter } from 'next/navigation';
 import { useEffect } from "react"
-import useStore from "@/app/utils/store";
+import {useStore} from "@/app/Store/store";
 import { useCookies } from 'react-cookie';
 
 const Logout = () => {
