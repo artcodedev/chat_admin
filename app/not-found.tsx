@@ -2,8 +2,8 @@ import Link from 'next/link'
 
 import style from '@/app/style/NotFound/NotFound.module.scss'
 import Button from 'react-bootstrap/Button';
-
-import 'bootstrap/dist/css/bootstrap.min.css';
+import '@/app/style/bootstrap.min.css'
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function NotFound() {
 

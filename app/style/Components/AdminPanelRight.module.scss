@@ -43,6 +43,7 @@
       padding: 10px 10px;
       position: relative;
       width: 100%;
+      border-bottom: 1px solid rgba(38, 77, 82, 0.24);
       &__uid {
         font-size: 20px;
         font-weight: bold;
@@ -51,7 +52,7 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        width: 165px;
+        width: 70%;
       }
 
       &__newMess {

@@ -6,7 +6,8 @@ import { useEffect } from "react"
 import { useRouter } from 'next/navigation';
 
 import style from "@/app/style/Auth/Auth.module.scss"
-import 'bootstrap/dist/css/bootstrap.min.css';
+import '@/app/style/bootstrap.min.css'
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 import Form from 'react-bootstrap/Form';

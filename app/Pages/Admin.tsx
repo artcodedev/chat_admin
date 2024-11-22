@@ -1,7 +1,9 @@
 
 'use client'
 import style from "@/app/style/Admin/Admin.module.scss"
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+
+import '@/app/style/bootstrap.min.css'
 
 import AdminPanelLeft from '@/app/Components/Admin/AdminPanelLeft'
 import AdminPanelRight from "@/app/Components/Admin/AdminPanelRight"
@@ -11,11 +13,11 @@ import Logout from "@/app/Components/Logout";
 import Payment from "@/app/Components/Admin/Payment";
 import Loading from "@/app/Components/Loading"
 import useStore from "@/app/utils/store";
-import Footer_admin from "@/app/Components/Admin/Admin_footer" 
+import Footer_admin from "@/app/Components/Admin/Admin_footer"
 
 
 const Admin = () => {
-
+    
     const { logout, payment, loading } = useStore()
 
     return (
@@ -41,46 +43,37 @@ const Admin = () => {
                             <div className={style['Admin__content__wrapper']}>
 
                                 {loading ? <Loading /> :
-                                
-                                <div className={style['Admin__content__cont']}>
 
-                                    <Admin_header />
+                                    <div className={style['Admin__content__cont']}>
 
+                                        <Admin_header />
 
+                                        <div className={style['Admin__message']}>
 
-                                    {/* <div className={style['Admin__header']}>
+                                            <div className={style['Admin__message__wrapp']}>
+                                                <div className={style['Admin_all_message']}>
 
-                                        <div className={style['Admin__header__wrap']}>
+                                                    <Message time="1.12.12.12" type_user="admin" message="hellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfsl" />
 
-                                            <div className={style['Admin__header__i']}>sssdd</div>
+                                                    <Message time="1.12.12.12" type_user="admin" message="hellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfsl" />
 
-                                        </div>
+                                                    <Message time="1.12.12.12" type_user="admin" message="hellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfsl" />
 
-                                    </div> */}
+                                                    <Message time="1.12.12.12" type_user="admin" message="hellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfslhellofsdfsfdsfsdfsl" />
 
+                                                    <Message time="1.12.12.12" type_user="admin" message="hellol" />
 
+                                                    <Message time="1.12.12.12" type_user="user" message="hellol" />
 
-
-                                    <div className={style['Admin__message']}>
-
-                                        <div className={style['Admin__message__wrapp']}>
-                                            <div className={style['Admin_all_message']}>
-
-                                                <Message time="1.12.12.12" type_user="admin" message="hellol" />
-
-                                                <Message time="1.12.12.12" type_user="admin" message="hellol" />
-
-                                                <Message time="1.12.12.12" type_user="user" message="hellol" />
-
+                                                </div>
                                             </div>
+
                                         </div>
 
-                                    </div>
-
-                                    <Footer_admin />
+                                        <Footer_admin />
 
 
-                                </div>}
+                                    </div>}
 
                             </div>
                         </div>

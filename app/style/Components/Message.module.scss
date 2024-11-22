@@ -9,8 +9,8 @@
     &_wrapp__utr {
       padding: 10px;
       max-width: 60%;
-      max-width: 500px;
-      min-width: 450px;
+      max-width: 600px;
+      // min-width: 450px;
       background: #e8e8e8;
       background-image: initial;
     }
@@ -36,7 +36,6 @@
       width: 100%;
       justify-content: start;
     }
-
   }
   &__message_info {
     display: flex;
@@ -61,5 +60,31 @@
   &__message_mes {
     text-wrap: wrap;
     overflow-wrap: break-word;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .Message {
+    &__mess {
+      &_wrapp__utr {
+        padding: 10px;
+        max-width: 60%;
+        max-width: 100%;
+        // min-width: 450px;
+        background: #e8e8e8;
+        background-image: initial;
+      }
+
+      &_wrapp__user {
+        border-radius: 10px 10px 10px 0px;
+        background-color: rgb(219, 219, 219);
+      }
+  
+      &_wrapp__admin {
+        border-radius: 10px 10px 0px 10px;
+        background-color: rgb(2, 210, 235);
+      }
+    }
+
   }
 }

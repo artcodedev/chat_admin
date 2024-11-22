@@ -2,7 +2,9 @@
 
 
 import style from "@/app/style/Components/Message.module.scss"
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Console from "@/app/utils/Console";
+import '@/app/style/bootstrap.min.css'
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 type Props = {
@@ -14,7 +16,9 @@ type Props = {
 
 const Message = ({ ...pr }: Props) => {
 
+
     return (
+
         <>
 
             <div className={style['Message__mess']}>
@@ -34,6 +38,7 @@ const Message = ({ ...pr }: Props) => {
 
             </div>
         </>
+        
     );
 }
 
